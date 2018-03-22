@@ -1,0 +1,22 @@
+{
+  "name": "kubernetes-configmap-updater",
+  "version": "1.0.0",
+  "description": "Automatically update your pods environment values when you update configmap values.",
+  "main": "index.js",
+  "repository": "https://github.com/Acanguven/kubernetes-configmap-update",
+  "author": "Ahmet Can Güven <ahmetcanguven44@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "bdd": "nodemon --exec yarn test",
+    "test": "nyc --check-coverage --lines=90 mocha test/*.js",
+    "prepublish": "yarn test"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.4",
+    "nodemon": "^1.17.2"
+  },
+  "dependencies": {
+    "node-fetch": "^2.1.1"
+  }
+}
