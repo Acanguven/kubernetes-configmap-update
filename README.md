@@ -11,7 +11,7 @@ yarn add kubernetes-configmap-updater
 * Using npm
 
 ```
-npm install kubernetes-configmap-udpater
+npm install kubernetes-configmap-updater
 ```
 
 ### Usage
