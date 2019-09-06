@@ -12,11 +12,12 @@
     "prepublish": "yarn test"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "mocha": "^5.0.4",
-    "nodemon": "^1.17.2"
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
+    "nodemon": "^1.19.2",
+    "nyc": "^14.1.1"
   },
   "dependencies": {
-    "node-fetch": "^2.1.1"
+    "node-fetch": "^2.6.0"
   }
 }
