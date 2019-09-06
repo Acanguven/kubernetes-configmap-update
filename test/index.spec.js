@@ -72,6 +72,29 @@ describe('Kubernetes ConfigMap Update', function () {
     });
   });
 
+  it('should login with token', function (done) {
+    const httpInstance = http.createServer(function (req, res) {
+      expect(req.headers.authorization).to.eq('Bearer emre');
+      res.end(JSON.stringify({
+        data: {
+          auth: 'yes'
+        }
+      }));
+    }).listen(4444);
+
+    const updaterInstance = require('../')({
+      updateUrl: 'http://127.0.0.1:4444/',
+      auth: {
+        token: 'emre'
+      }
+    });
+
+    updaterInstance.update(() => {
+      updaterInstance.stop();
+      httpInstance.close(done);
+    });
+  });
+
   it('should update environment values', function (done) {
     process.env.testValue = 'false';
 

@@ -35,7 +35,11 @@ const update = (config, cb) => {
   const headers = {};
 
   if (config.auth) {
-    headers['authorization'] = 'Basic ' + Buffer.from(config.auth.username + ':' + config.auth.password).toString('base64');
+    if(config.auth.token) {
+      headers['authorization'] = 'Bearer ' + config.auth.token;
+    } else {
+      headers['authorization'] = 'Basic ' + Buffer.from(config.auth.username + ':' + config.auth.password).toString('base64');
+    }
   }
 
   fetch(config.updateUrl, {agent: (config.updateUrl.indexOf('https') > -1 ? httpsAgent : httpAgent), headers})
