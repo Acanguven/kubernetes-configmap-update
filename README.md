@@ -25,7 +25,8 @@ configUpdater({
   exclude: ['NODE_ENV', 'CUSTOM1','CUSTOM2'],
   auth: {
     username: 'username',
-    password: 'password'
+    password: 'password',
+    token: 'token' // provide token or username/password
   }
 });
 ```
@@ -34,8 +35,7 @@ configUpdater({
 * **frequency**: (Optional) Update interval in ms. Default: `300000`
 * **overwriteExisting**: (Optional) Change value of existing key. Default: `true`
 * **exclude**: (Optional) Exclude keys from being updated. Default: []
-* **auth**: (Optional) Most Kubernetes apis require basic auth. You can provide your username and password. **(Best practice: Use kubernetes secrets, don't write your username and password directly here)**
-
+* **auth**: (Optional) Most Kubernetes apis require basic auth. You can provide your username and password or token(for Bearer auth). **(Best practice: Use kubernetes secrets, don't write your username and password directly here)**
 
 ### Refs
 
